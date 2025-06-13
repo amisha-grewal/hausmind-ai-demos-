@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <header class="p-4 bg-white shadow flex items-center">
+    <img src="https://i.ibb.co/TS22Z5R/logo.png" alt="Hausmind AI" class="h-10 mr-3">
+    <h1 class="text-xl font-semibold">Hausmind AI Chatbot</h1>
+  </header>
+  <main class="p-6">
+    <div id="chat-container" class="fixed bottom-4 right-4 w-80 bg-white rounded-xl shadow-lg flex flex-col">
+      <div id="chat-header" class="p-4 bg-blue-600 text-white font-bold rounded-t-xl cursor-pointer">Chat with us</div>
+      <div id="chat-body" class="hidden p-4 flex-1 overflow-y-auto space-y-3">
+        <div class="text-gray-700">Hi there! How can I help your business today?</div>
+      </div>
+      <div id="chat-input-container" class="hidden p-4 border-t">
+        <input id="chat-input" type="text" class="w-full p-2 border rounded" placeholder="Type a message..." />
+      </div>
+    </div>
+  </main>
+  <script>
+    const header = document.getElementById('chat-header');
+    const body = document.getElementById('chat-body');
+    const inputContainer = document.getElementById('chat-input-container');
+    header.addEventListener('click', () => {
+      const open = !body.classList.contains('hidden');
+      if(open){
+        body.classList.add('hidden');
+        inputContainer.classList.add('hidden');
+      } else {
+        body.classList.remove('hidden');
+        inputContainer.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

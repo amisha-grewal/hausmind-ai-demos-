@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insights Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+  <header class="p-4 bg-white shadow flex items-center">
+    <img src="https://i.ibb.co/TS22Z5R/logo.png" alt="Hausmind AI" class="h-10 mr-3">
+    <h1 class="text-xl font-semibold">AI Insights Dashboard Demo</h1>
+  </header>
+  <main class="p-6">
+    <canvas id="insightsChart" class="bg-white p-4 rounded-lg shadow"></canvas>
+  </main>
+  <script>
+    const ctx = document.getElementById('insightsChart').getContext('2d');
+    new Chart(ctx,{
+      type: 'bar',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May'],
+        datasets:[{
+          label:'Revenue ($K)',
+          data: [12,19,8,15,22],
+          backgroundColor:'rgba(54,162,235,0.2)',
+          borderColor:'rgba(54,162,235,1)',
+          borderWidth:1
+        }]
+      },
+      options:{
+        scales:{y:{beginAtZero:true}}
+      }
+    });
+  </script>
+</body>
+</html>
